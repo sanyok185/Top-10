@@ -994,30 +994,34 @@ body::after {
   transition: all 0.5s ease 0.55s;
 }
 
-.hero__stars img:nth-child(5) {
+.hero__stars .big-star {
   -webkit-transition: all 0.55s ease-out 1s;
   transition: all 0.55s ease-out 1s;
   -webkit-transform: translate(-0.625rem, 0) scale(0.5);
       -ms-transform: translate(-0.625rem, 0) scale(0.5);
           transform: translate(-0.625rem, 0) scale(0.5);
+  opacity: 0;
 }
 
-.hero__stars img:nth-child(5)._watcher-view {
+.hero__stars .big-star._watcher-view {
+  opacity: 1;
   -webkit-transform: translate(-0.625rem, 0) scale(1);
       -ms-transform: translate(-0.625rem, 0) scale(1);
           transform: translate(-0.625rem, 0) scale(1);
 }
 
-.hero__stars img:nth-child(6) {
+.hero__stars .pointer {
   position: absolute;
   bottom: -1rem;
   right: 2rem;
   -webkit-transition: all 0.5s ease 0.85s;
   transition: all 0.5s ease 0.85s;
+  opacity: 0;
 }
 
-.hero__stars img:nth-child(6)._watcher-view {
+.hero__stars .pointer._watcher-view {
   bottom: -0.75rem;
+  opacity: 1;
 }
 
 .hero__title {
