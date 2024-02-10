@@ -959,7 +959,6 @@ body::after {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  gap: 0.875rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -975,21 +974,25 @@ body::after {
 }
 
 .hero__stars img:nth-child(1) {
+  margin-right: 0.875rem;
   -webkit-transition: all 0.5s ease 0.1s;
   transition: all 0.5s ease 0.1s;
 }
 
 .hero__stars img:nth-child(2) {
+  margin-right: 0.875rem;
   -webkit-transition: all 0.5s ease 0.25s;
   transition: all 0.5s ease 0.25s;
 }
 
 .hero__stars img:nth-child(3) {
+  margin-right: 0.875rem;
   -webkit-transition: all 0.5s ease 0.4s;
   transition: all 0.5s ease 0.4s;
 }
 
 .hero__stars img:nth-child(4) {
+  margin-right: 0.875rem;
   -webkit-transition: all 0.5s ease 0.55s;
   transition: all 0.5s ease 0.55s;
 }
