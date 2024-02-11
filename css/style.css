@@ -949,7 +949,7 @@ body::after {
   /* .hero__button */
 }
 
-.no-webp .loaded .hero{
+.no-webp .hero._watcher-view{
   background: url("../img/hero/bg.jpg") 35% 100%/cover no-repeat; }
 
 .hero::after {
@@ -997,7 +997,7 @@ body::after {
   opacity: 0;
 }
 
-.loaded .hero__stars img._active {
+.hero__stars img._active {
   opacity: 1;
 }
 
@@ -1026,15 +1026,15 @@ body::after {
 }
 
 .hero__stars .big-star {
-  -webkit-transition: all 0.55s ease-out 1.2s;
-  transition: all 0.55s ease-out 1.2s;
+  -webkit-transition: all 0.55s ease-out 1.5s;
+  transition: all 0.55s ease-out 1.5s;
   -webkit-transform: translate(-0.625rem, 0) scale(0.5);
       -ms-transform: translate(-0.625rem, 0) scale(0.5);
           transform: translate(-0.625rem, 0) scale(0.5);
   opacity: 0;
 }
 
-.loaded .hero__stars .big-star._active {
+.hero__stars .big-star._active {
   opacity: 1;
   -webkit-transform: translate(-0.625rem, 0) scale(1);
       -ms-transform: translate(-0.625rem, 0) scale(1);
@@ -1045,12 +1045,12 @@ body::after {
   position: absolute;
   bottom: -1.125rem;
   right: 2rem;
-  -webkit-transition: all 0.5s ease 1.05s;
-  transition: all 0.5s ease 1.05s;
+  -webkit-transition: all 0.5s ease 1.25s;
+  transition: all 0.5s ease 1.25s;
   opacity: 0;
 }
 
-.loaded .hero__stars .pointer._active {
+.hero__stars .pointer._active {
   bottom: -0.875rem;
   opacity: 1;
 }
@@ -3534,7 +3534,7 @@ body::after {
   }
 }
 
-.webp .loaded .hero{ background: url(../img/hero/bg.webp) 35% 100%/cover no-repeat; }
+.webp .hero._watcher-view{ background: url(../img/hero/bg.webp) 35% 100%/cover no-repeat; }
 
 .webp .about__video{ background: url(../img/about/video.webp) center/cover no-repeat; }
 
