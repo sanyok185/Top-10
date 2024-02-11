@@ -938,6 +938,7 @@ body::after {
 }
 
 .hero {
+  /* .hero__bg */
   height: 37.5rem;
   position: relative;
   padding-top: 3.75rem;
@@ -949,8 +950,17 @@ body::after {
   /* .hero__button */
 }
 
-.no-webp .hero._watcher-view{
-  background: url("../img/hero/bg.jpg") 35% 100%/cover no-repeat; }
+.hero__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 35% 100%;
+     object-position: 35% 100%;
+}
 
 .hero::after {
   content: "";
@@ -3533,8 +3543,6 @@ body::after {
     text-decoration: none;
   }
 }
-
-.webp .hero._watcher-view{ background: url(../img/hero/bg.webp) 35% 100%/cover no-repeat; }
 
 .webp .about__video{ background: url(../img/about/video.webp) center/cover no-repeat; }
 
