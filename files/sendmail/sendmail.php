@@ -22,7 +22,8 @@
 	//Від кого лист
 	$mail->setFrom('user@gmail.com', 'Top-10.in.ua'); // Вказати потрібний E-mail
 	//Кому відправити
-	$mail->addAddress('user@gmail.com'); // Вказати потрібний E-mail
+	$mail->addAddress('user@gmail.com'); // Вказати потрібний E-mail(можна додати декілька)
+	// $mail->addAddress('user1@gmail.com'); приклад підключення другого email
 	//Тема листа
 	$mail->Subject = 'Вітання! Хочу отримати консультацію!"';
 

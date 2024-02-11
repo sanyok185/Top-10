@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240210075047">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240211075742">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,8 @@
 					<nav class="menu__body">
 						<ul class="menu__list">
 							<li class="menu__item"><a href="home.html" class="menu__link _icon-home">Головна</a></li>
-							<li class="menu__item"><a href="home.html#about" class="menu__link _icon-about">Про рейтинг</a></li>
+							<li class="menu__item"><a href="home.html?section=about" class="menu__link _icon-about">Про рейтинг</a></li>
+
 							<li class="menu__item"><a href="#" class="menu__link _icon-add">Додати компанію</a></li>
 						</ul>
 					</nav>
@@ -63,7 +64,7 @@
 				<div class="footer__column">
 					<ul class="footer__list">
 						<li class="footer__item"><a href="home.html" class="footer__link">Головна</a></li>
-						<li class="footer__item"><a href="#about" class="footer__link">Про рейтинг</a></li>
+						<li class="footer__item"><a href="home.html?section=about" class="footer__link">Про рейтинг</a></li>
 						<li class="footer__item"><a href="#" class="footer__link">Додати компанію</a></li>
 					</ul>
 				</div>
@@ -81,7 +82,7 @@
 	<div id="login" aria-hidden="true" class="popup popup-authorization">
 		<div class="popup__wrapper">
 			<div class="popup-authorization__content popup__content">
-				<button data-close type="button" class="popup__close _icon-close"></button>
+				<a href="home.html" type="button" class="popup-authorization__close _icon-close"></a>
 				<h2 class="popup-authorization__caution">
 					Увага!
 				</h2>
@@ -91,15 +92,15 @@
 				<div class="popup-authorization__text">
 					Щоб відкрити рейтинг та адреси компаній, <br> <span>заповніть форму:</span>
 				</div>
-				<form data-dev data-popup-message="#form-message" action="files/sendmail/sendmail.php" method="POST" class="popup-authorization__form form-authorization">
+				<form data-dev action="files/sendmail/sendmail.php" method="POST" class="popup-authorization__form form-authorization">
 					<div class="form-question__item form-authorization__item">
-						<input data-required type="text" name="name" data-error="Обов’язкове поле!" class="form-authorization__input form-question__input input">
+						<input data-required="text" type="text" name="name" data-error="Обов’язкове поле!" data-validation="Неправильно заповнене поле!" class="form-authorization__input form-question__input input">
 						<div class="form-authorization__placeholder form-question__placeholder">
 							Ваше ім’я<span> *</span>
 						</div>
 					</div>
 					<div class="form-question__item form-authorization__item">
-						<input data-required type="text" name="phone" data-error="Обов’язкове поле!" class="form-authorization__input form-question__input input">
+						<input data-required="phone" data-validation="Неправильно заповнене поле!" data-required type="text" name="phone" data-error="Обов’язкове поле!" class="form-authorization__input form-question__input input">
 						<div class="form-authorization__placeholder form-question__placeholder">
 							Телефон<span> *</span>
 						</div>
@@ -108,7 +109,7 @@
 						Відкрити рейтинг
 					</button>
 					<div class="checkbox">
-						<input id="c_1" data-error="Помилка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+						<input data-required data-error="Обов’язкове поле!" id="c_1" data-error="Помилка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 						<label for="c_1" class="checkbox__label _icon-checkmark"><span class="checkbox__text">Даю згоду на обробку персональних даних</span></label>
 					</div>
 				</form>
@@ -151,7 +152,7 @@
 
 
 
-	<script src="js/app.min.js?_v=20240210075047"></script>
+	<script src="js/app.min.js?_v=20240211075742"></script>
 </body>
 
 </html>

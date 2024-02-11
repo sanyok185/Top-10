@@ -165,14 +165,14 @@
                     return;
                 }
                 const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
-                if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
+                if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen && this.hash !== "#login") {
                     e.preventDefault();
                     this.close();
                     return;
                 }
             }.bind(this));
             document.addEventListener("keydown", function(e) {
-                if (this.options.closeEsc && e.which == 27 && e.code === "Escape" && this.isOpen) {
+                if (this.options.closeEsc && this.hash !== "#login" && e.which == 27 && e.code === "Escape" && this.isOpen) {
                     e.preventDefault();
                     this.close();
                     return;
@@ -288,9 +288,7 @@
         }
         _openToHash() {
             let classInHash = document.querySelector(`.${window.location.hash.replace("#", "")}`) ? `.${window.location.hash.replace("#", "")}` : document.querySelector(`${window.location.hash}`) ? `${window.location.hash}` : null;
-            const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash.replace(".", "#")}"]`);
-            this.youTubeCode = buttons.getAttribute(this.options.youtubeAttribute) ? buttons.getAttribute(this.options.youtubeAttribute) : null;
-            if (buttons && classInHash) this.open(classInHash);
+            if (classInHash) this.open(classInHash);
         }
         _setHash() {
             history.pushState("", "", this.hash);
@@ -428,6 +426,22 @@
                     this.addError(formRequiredItem);
                     error++;
                 } else this.removeError(formRequiredItem);
+            } else if (formRequiredItem.dataset.required === "text") {
+                if (!formRequiredItem.value) {
+                    this.addError(formRequiredItem);
+                    error++;
+                } else if (!/^[A-Za-zА-Яа-яЄєЇїІіҐґ]+$/.test(formRequiredItem.value)) {
+                    this.addValidationError(formRequiredItem);
+                    error++;
+                }
+            } else if (formRequiredItem.dataset.required === "phone") {
+                if (!formRequiredItem.value) {
+                    this.addError(formRequiredItem);
+                    error++;
+                } else if (!/^[0-9()+]+$/.test(formRequiredItem.value)) {
+                    this.addValidationError(formRequiredItem);
+                    error++;
+                }
             } else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
                 this.addError(formRequiredItem);
                 error++;
@@ -443,6 +457,13 @@
             let inputError = formRequiredItem.parentElement.querySelector(".form__error");
             if (inputError) formRequiredItem.parentElement.removeChild(inputError);
             if (formRequiredItem.dataset.error) formRequiredItem.parentElement.insertAdjacentHTML("beforeend", `<div class="form__error">${formRequiredItem.dataset.error}</div>`);
+        },
+        addValidationError(formRequiredItem) {
+            formRequiredItem.classList.add("_form-error");
+            formRequiredItem.parentElement.classList.add("_form-error");
+            let inputError = formRequiredItem.parentElement.querySelector(".form__error");
+            if (inputError) formRequiredItem.parentElement.removeChild(inputError);
+            if (formRequiredItem.dataset.error) formRequiredItem.parentElement.insertAdjacentHTML("beforeend", `<div class="form__error">${formRequiredItem.dataset.validation}</div>`);
         },
         removeError(formRequiredItem) {
             formRequiredItem.classList.remove("_form-error");
@@ -537,6 +558,7 @@
             }), 0);
             formValidate.formClean(form);
             formLogging(`Форму відправлено!`);
+            modules_flsModules.popup.close("#login");
         }
         function formLogging(message) {
             FLS(`[Форми]: ${message}`);
@@ -4430,7 +4452,9 @@
             }));
         }
     }
-    modules_flsModules.watcher = new ScrollWatcher({});
+    document.addEventListener("DOMContentLoaded", (function() {
+        modules_flsModules.watcher = new ScrollWatcher({});
+    }));
     let addWindowScrollEvent = false;
     setTimeout((() => {
         if (addWindowScrollEvent) {
@@ -4575,6 +4599,20 @@
         }));
     }
     if (document.querySelector(".about__video")) loadVideo();
+    document.addEventListener("DOMContentLoaded", (function() {
+        const isHomePage = window.location.pathname.includes("home.html");
+        const isAboutPage = new URLSearchParams(window.location.search).get("section") === "about";
+        if (isHomePage && isAboutPage) {
+            const aboutSection = document.querySelector("#about");
+            if (aboutSection) {
+                const aboutSectionTop = aboutSection.getBoundingClientRect().top;
+                window.scrollBy({
+                    top: aboutSectionTop - 60,
+                    behavior: "smooth"
+                });
+            }
+        }
+    }));
     window["FLS"] = true;
     isWebp();
     menuInit();
