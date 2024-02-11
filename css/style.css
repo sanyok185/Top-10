@@ -1014,30 +1014,30 @@ body::after {
 
 .hero__star:nth-child(1) {
   margin-right: 0.875rem;
-  -webkit-transition: all 0.5s ease 0.1s;
+  -webkit-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0.1s;
 }
 
 .hero__star:nth-child(2) {
   margin-right: 0.875rem;
-  -webkit-transition: all 0.5s ease 0.25s;
+  -webkit-transition: all 0.5s ease 0.5s;
   transition: all 0.5s ease 0.25s;
 }
 
 .hero__star:nth-child(3) {
   margin-right: 0.875rem;
-  -webkit-transition: all 0.5s ease 0.4s;
+  -webkit-transition: all 0.5s ease 0.3s;
   transition: all 0.5s ease 0.4s;
 }
 
 .hero__star:nth-child(4) {
   margin-right: 0.875rem;
-  -webkit-transition: all 0.5s ease 0.55s;
+  -webkit-transition: all 0.5s ease 0.45s;
   transition: all 0.5s ease 0.55s;
 }
 
 .hero__big-star {
-  -webkit-transition: all 0.5s ease-out 0.95s;
+  -webkit-transition: all 0.5s ease-out 0.85s;
   transition: all 0.5s ease-out 0.95s;
   -webkit-transform: translate(-0.625rem, 0) scale(0.5);
       -ms-transform: translate(-0.625rem, 0) scale(0.5);
@@ -1057,7 +1057,7 @@ body::after {
   bottom: -1.125rem;
   right: 2rem;
   -webkit-transition: all 0.5s ease 0.8s;
-  transition: all 0.5s ease 0.8s;
+  transition: all 0.5s ease 0.7s;
   opacity: 0;
 }
 
