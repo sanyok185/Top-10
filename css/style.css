@@ -937,9 +937,6 @@ body::after {
   /* .page__questions */
 }
 
-.no-webp .hero{
-  background: url("../img/hero/bg.jpg") 35% 100%/cover no-repeat; }
-
 .hero {
   height: 37.5rem;
   position: relative;
@@ -951,6 +948,9 @@ body::after {
   /* .hero__text */
   /* .hero__button */
 }
+
+.no-webp .loaded .hero{
+  background: url("../img/hero/bg.jpg") 35% 100%/cover no-repeat; }
 
 .hero::after {
   content: "";
@@ -1026,8 +1026,8 @@ body::after {
 }
 
 .hero__stars .big-star {
-  -webkit-transition: all 0.55s ease-out 1s;
-  transition: all 0.55s ease-out 1s;
+  -webkit-transition: all 0.55s ease-out 1.2s;
+  transition: all 0.55s ease-out 1.2s;
   -webkit-transform: translate(-0.625rem, 0) scale(0.5);
       -ms-transform: translate(-0.625rem, 0) scale(0.5);
           transform: translate(-0.625rem, 0) scale(0.5);
@@ -1045,8 +1045,8 @@ body::after {
   position: absolute;
   bottom: -1.125rem;
   right: 2rem;
-  -webkit-transition: all 0.5s ease 0.85s;
-  transition: all 0.5s ease 0.85s;
+  -webkit-transition: all 0.5s ease 1.05s;
+  transition: all 0.5s ease 1.05s;
   opacity: 0;
 }
 
@@ -3534,7 +3534,7 @@ body::after {
   }
 }
 
-.webp .hero{ background: url(../img/hero/bg.webp) 35% 100%/cover no-repeat; }
+.webp .loaded .hero{ background: url(../img/hero/bg.webp) 35% 100%/cover no-repeat; }
 
 .webp .about__video{ background: url(../img/about/video.webp) center/cover no-repeat; }
 
