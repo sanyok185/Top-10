@@ -241,18 +241,17 @@ body {
 }
 
 .checkbox__input:checked + .checkbox__label:before {
-  border: 2px solid #a7a9ac;
   content: "\e904";
 }
 
 .checkbox__label {
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
   gap: 9px;
 }
@@ -945,6 +944,8 @@ body::after {
   /* .hero__container */
   /* .hero__content */
   /* .hero__stars */
+  /* .hero__big-star */
+  /* .hero__pointer */
   /* .hero__title */
   /* .hero__text */
   /* .hero__button */
@@ -1003,64 +1004,64 @@ body::after {
   position: relative;
 }
 
-.hero__stars img {
+.hero__star {
   opacity: 0;
 }
 
-.hero__stars img._active {
+.hero__star._active {
   opacity: 1;
 }
 
-.hero__stars img:nth-child(1) {
+.hero__star:nth-child(1) {
   margin-right: 0.875rem;
   -webkit-transition: all 0.5s ease 0.1s;
   transition: all 0.5s ease 0.1s;
 }
 
-.hero__stars img:nth-child(2) {
+.hero__star:nth-child(2) {
   margin-right: 0.875rem;
   -webkit-transition: all 0.5s ease 0.25s;
   transition: all 0.5s ease 0.25s;
 }
 
-.hero__stars img:nth-child(3) {
+.hero__star:nth-child(3) {
   margin-right: 0.875rem;
   -webkit-transition: all 0.5s ease 0.4s;
   transition: all 0.5s ease 0.4s;
 }
 
-.hero__stars img:nth-child(4) {
+.hero__star:nth-child(4) {
   margin-right: 0.875rem;
   -webkit-transition: all 0.5s ease 0.55s;
   transition: all 0.5s ease 0.55s;
 }
 
-.hero__stars .big-star {
-  -webkit-transition: all 0.55s ease-out 1.5s;
-  transition: all 0.55s ease-out 1.5s;
+.hero__big-star {
+  -webkit-transition: all 0.5s ease-out 0.95s;
+  transition: all 0.5s ease-out 0.95s;
   -webkit-transform: translate(-0.625rem, 0) scale(0.5);
       -ms-transform: translate(-0.625rem, 0) scale(0.5);
           transform: translate(-0.625rem, 0) scale(0.5);
   opacity: 0;
 }
 
-.hero__stars .big-star._active {
+.hero__big-star._active {
   opacity: 1;
   -webkit-transform: translate(-0.625rem, 0) scale(1);
       -ms-transform: translate(-0.625rem, 0) scale(1);
           transform: translate(-0.625rem, 0) scale(1);
 }
 
-.hero__stars .pointer {
+.hero__pointer {
   position: absolute;
   bottom: -1.125rem;
   right: 2rem;
-  -webkit-transition: all 0.5s ease 1.25s;
-  transition: all 0.5s ease 1.25s;
+  -webkit-transition: all 0.5s ease 0.8s;
+  transition: all 0.5s ease 0.8s;
   opacity: 0;
 }
 
-.hero__stars .pointer._active {
+.hero__pointer._active {
   bottom: -0.875rem;
   opacity: 1;
 }
