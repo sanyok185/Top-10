@@ -506,13 +506,12 @@ body::after {
 }
 
 .popup-offer__content {
-  position: relative;
-  max-width: 600px;
-  padding: 0;
-  overflow: clip;
-  display: -ms-grid;
-  display: grid;
-  justify-items: center;
+     max-width: 600px;
+		padding: 0;
+		overflow: clip;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 }
 
 .popup-offer__image {
