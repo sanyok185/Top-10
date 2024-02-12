@@ -509,7 +509,7 @@ body::after {
   position: relative;
   max-width: 600px;
   padding: 0;
-  overflow: hidden;
+  overflow: clip;
   display: -ms-grid;
   display: grid;
   justify-items: center;
